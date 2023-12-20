@@ -6,7 +6,7 @@ const companys = [
     id: 1,
     date: "10 Oktober 2023",
     title:
-      "Perusahaan 1",
+      "Perusahaan 1 Test",
     judul:
       "Posisi yang Tersedia",
     image:
