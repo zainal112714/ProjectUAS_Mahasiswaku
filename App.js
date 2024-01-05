@@ -20,6 +20,7 @@ import Loginadmin from "./screens/loginadmin";
 import Signupadmin from "./screens/signupadmin";
 import Chooseadmin from "./screens/chooseadmin";
 import Data from "./screens/data";
+import Detail from "./screens/detail";
 import Editcompany from "./screens/editcompany";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -115,6 +116,7 @@ const App = () => {
           <Stack.Screen name="Companyadmin" component={Companyadmin} options={noHead} />
           <Stack.Screen name="Editcompany" component={Editcompany} options={noHead} />
           <Stack.Screen name="Data" component={Data} options={noHead} />
+          <Stack.Screen name="Detail" component={Detail} options={noHead} />
           <Stack.Screen name="Taskdone" component={Taskdone} options={noHead} />
         </Stack.Navigator>
       </NavigationContainer>

@@ -72,7 +72,7 @@ const AdminCompanyList = ({ navigation }) => {
         )}
       />
       </ScrollView>
-      
+       
     </View>
   );
 };

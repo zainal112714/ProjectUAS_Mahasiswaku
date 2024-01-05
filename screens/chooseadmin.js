@@ -9,7 +9,7 @@ const Form = () => {
   const navigation = useNavigation();
   return (
     <>
-        <View h={"full"} w={"full"} backgroundColor={"white"}>
+    <Header withBack="true" />
             <View mx={"10"} my={"auto"}>
                 <Center mb={"25"}>
                     <Image source={require("../assets/first.png")} alt="photo" w={"180"} h={'180'} mb={"2"} />
@@ -33,7 +33,6 @@ const Form = () => {
                     By creating an account, you are agreeing to our Terms of Service
                 </Text>
             </Center>
-      </View>
     </>
   );
 };

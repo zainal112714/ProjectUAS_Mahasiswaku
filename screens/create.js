@@ -41,44 +41,62 @@ const Create = () => {
     fetchCompanies();
 }, []);
 
-  const onAddCompany = async () => {
+const pickImage = async () => {
+  let result = await ImagePicker.launchImageLibraryAsync({
+    mediaTypes: ImagePicker.MediaTypeOptions.All,
+    allowsEditing: true,
+    aspect: [4, 3],
+    quality: 1,
+  });
+
+  console.log(result);
+
+  if (!result.cancelled) {
+    setImage(result.uri);
+  }
+};
+
+const onAddCompany = async () => {
+  try {
     if (nama && deskripsi && divisi && image) {
+      const response = await fetch(image);
+      const blob = await response.blob();
+
+      // Generate a unique name for the image
+      const imageName = new Date().toISOString();
+
+      // Reference to the Firebase Storage path
+      const storageRef = FIREBASE.storage().ref().child('images/' + imageName);
+
+      // Upload the image to Firebase Storage
+      await storageRef.put(blob);
+
+      // Get the download URL for the image
+      const downloadUrl = await storageRef.getDownloadURL();
+
       const data = {
         nama: nama,
         deskripsi: deskripsi,
         divisi: divisi,
-        image: image,
+        image: downloadUrl,
       };
 
-      console.log(data);
-      try {
-        const user = await addCompany(data);
-        navigation.navigate("Companyadmin");
-      } catch (error) {
-        console.log("Error", error.message);
-        toggleAlert(error.message);
-      }
+      console.log("Data to be added:", data);
+
+      // Add data to Firebase Firestore
+      const user = await addCompany(data);
+      console.log("Company added successfully:", user);
+
+      // Navigate to "Companyadmin" screen
+      navigation.navigate("Companyadmin");
     } else {
-      console.log("Error", "Data tidak lengkap");
-      toggleAlert("Data tidak lengkap");
+      console.error("Error", "Data tidak lengkap");
     }
-  };
+  } catch (error) {
+    console.error("Error adding company:", error);
+  }
+};
 
-  const pickImage = async () => {
-    // No permissions request is necessary for launching the image library
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
-    });
-
-    console.log(result);
-
-    if (!result.canceled) {
-        setImage(result.uri);
-    }
-  };
 
   const getUserData = () => {
     getData("admin").then((res) => {
@@ -121,7 +139,8 @@ const Create = () => {
   };
   return (
     <>
-      <View mx={"10"} my={"auto"}>
+    <ScrollView>
+<View mx={"10"} my={"20"}>
         <Center>
             <Image
                 source={require("../assets/telkom.png")}
@@ -176,6 +195,8 @@ const Create = () => {
         </Center>
         
       </View>
+    </ScrollView>
+      
     </>
   );
 };

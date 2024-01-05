@@ -14,7 +14,7 @@ const Profile = () => {
       const data = res;
       if (data) {
         console.log("isi data", data);
-        setProfile(data);
+        setProfile(data); 
       } else {
         // navigation.replace('Login');
       }

@@ -16,7 +16,7 @@ const Cover = () => {
       <View style={{ marginVertical: 137 }}>
         <Button
         withBack="true"
-          onPress={() =>
+          onPress={() => 
             navigation.navigate("Choose")
           } 
           mx={"auto"} w={"40%"} bg={"#9A1314"} borderRadius={"10"} >

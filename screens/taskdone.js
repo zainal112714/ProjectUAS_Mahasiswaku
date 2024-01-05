@@ -52,7 +52,7 @@ const TaskCompletedScreen = () => {
         <Header title={"Izumi"} withBack="true" />
             <Box mx={3} mt={3} flex={1}>
             {isLoading ? (
-                <Center flex={1}>
+                <Center flex={1}> 
                 <Spinner size="lg" color="#9A1314" />
                 </Center>
             ) : completedListLength === 0 ? (

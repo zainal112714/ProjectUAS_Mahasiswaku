@@ -12,7 +12,7 @@ const AdminViewData = () => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
+  const fetchData = async () => { 
     try {
       const data = await getForm(); // Menggunakan fungsi getForm yang sudah ada
       setFormData(data);

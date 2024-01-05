@@ -16,7 +16,7 @@ const EditCompany = ({ route }) => {
   const onEditCompany = async () => {
     if (nama && deskripsi && divisi && image) {
       const data = {
-        nama: nama,
+        nama: nama, 
         deskripsi: deskripsi,
         divisi: divisi,
         image: image,

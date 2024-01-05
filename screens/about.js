@@ -10,7 +10,7 @@ const Profile = () => {
         <Image source={require("../assets/cover2.png")} alt="background" w={"full"} h={"280"}/>
       </View>
       <View my={5} mx={50}>
-        <Center>
+        <Center> 
             <Heading>App Description</Heading>
             <Text fontSize={15} textAlign={"justify"} mt={"3"}>"MahasiswaKu" merupakan aplikasi mobile inovatif yang bertujuan untuk memfasilitasi mahasiswa dan alumni dalam mengakses informasi komprehensif 
                 mengenai perusahaan dan lowongan pekerjaan di bidang Teknologi Informasi (TI). Aplikasi ini berfungsi sebagai jembatan antara kandidat yang berharap dan 

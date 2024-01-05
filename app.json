@@ -4,7 +4,7 @@
     "slug": "pab-uts",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/telkomm.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "plugins": [
       [
@@ -15,7 +15,7 @@
       ]
     ],
     "splash": {
-      "image": "./assets/telkomm.png",
+      "image": "./assets/splash.png",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
@@ -26,7 +26,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logo-app.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       }
     },

@@ -16,7 +16,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { TaskList } from "../components";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Header } from "../components";
+import { Header } from "../components"; 
 
 const TaskScreen = () => {
   const [list, setList] = useState([]);
